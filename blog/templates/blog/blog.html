@@ -53,7 +53,7 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Gresiandra Putra</a>
+        <a class="navbar-brand" href="{% url 'jobs:index' %}">Gresiandra Putra</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,39 +69,26 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>Hi, I'm Andra.</h1>
-      <p class="lead text-muted">I currently learning how to make portfolio website using django frameworks.<br> I know it is not perfect yet, but it will be someday :)</p>
-      <p>
-        <a href="mailto:gresiandra@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
+        <h1 class='text-center pt-5 pb-5'>Welcome to Andra's Blogs</h1>
+        <h2 class='pb-2'>Latest Posts</h2>
+        <hr>
     </div>
-  </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
+    
+    {% for blog in blogs %}
 
-      <div class="row">
-        
-        
-        {% for job in jobs %}
-          
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{job.image.url}}" width="fit" height="200">
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-            </div>
-          </div>
+        <div class="container">
+            <h4 class="pt-4"><a href="{% url 'blog:detail' blog.id %}">{{blog.title}}</a></h4>
+            <h7 class="pt-2">{{blog.pub_date}}</h7>
+            <br>
+            <img class="img-fluid" src="{{blog.image.url}}" width="240" height="160"/>
+            <p class="pt-2">{{blog.summary}}<a href="{% url 'blog:detail' blog.id %}">...More</a></p>
+            <hr>
         </div>
-
-        {% endfor %}
         
-      </div>
-    </div>
-  </div>
-
+    {% endfor %}
+    
 </main>
 
 <footer class="text-muted">

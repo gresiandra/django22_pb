@@ -9,6 +9,8 @@ class blog(models.Model):
     body = models.TextField()
     image = models.ImageField(upload_to='images/')
 
+    def summary(self):
+        return self.body[:200]
 
-def __str__(self):
-    return "{}. {}".format(self.id, self.title)
+    def __str__(self):
+        return "{}. {}".format(self.id,self.title)
