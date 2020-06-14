@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+{% load static %}
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -53,14 +56,14 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Gresiandra Putra</a>
+        <a class="navbar-brand" href="{% url 'jobs:index' %}">Gresiandra Putra</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Twitter</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
+                <a class="nav-item nav-link" href="https://twitter.com/gresiandra">Twitter</a>
+                <a class="nav-item nav-link" href="{% static 'CV.pdf' %}">Resume</a>
                 <a class="nav-item nav-link" href="{% url 'blog:allblogs' %}">Blog</a>
             </div>
         </div>
@@ -70,12 +73,13 @@
 <main role="main">
 
   <section class="jumbotron text-center">
-    <div class="container">
+    <div class="container1">
       <h1>Hi, I'm Andra.</h1>
       <p class="lead text-muted">I currently learning how to make portfolio website using django frameworks.<br> I know it is not perfect yet, but it will be someday :)</p>
       <p>
         <a href="mailto:gresiandra@gmail.com" class="btn btn-primary my-2">Email Me</a>
       </p>
+      <img src="{% static 'Gresiandra Fitrahananda Putra.jpg' %}" width="200" height="250">
     </div>
   </section>
 

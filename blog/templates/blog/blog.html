@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+
+{% load static %}
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -60,7 +63,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="#">Twitter</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
+                <a class="nav-item nav-link" href="{% static 'CV.pdf' %}">Resume</a>
                 <a class="nav-item nav-link" href="{% url 'blog:allblogs' %}">Blog</a>
             </div>
         </div>
